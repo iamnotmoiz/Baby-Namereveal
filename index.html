@@ -133,7 +133,6 @@
             line-height: 0.8;
         }
 
-        /* Centered nodes on mobile */
         @media (max-width: 768px) {
             .timeline-node-content {
                 text-align: center !important;
@@ -142,14 +141,13 @@
             }
             .timeline-node-icon {
                 justify-content: center !important;
-                order: -1 !important; /* Move icon above text on mobile */
+                order: -1 !important;
                 margin-bottom: 1.5rem;
             }
-            /* Keep line central */
             .timeline-line {
                 left: 50%;
                 transform: translateX(-50%);
-                opacity: 0.3; /* Subtle line through the center of icons */
+                opacity: 0.3;
             }
         }
     </style>
@@ -178,17 +176,17 @@
     <!-- Main Content -->
     <div id="main-content" class="hidden relative z-10 min-h-screen flex flex-col items-center pb-20 opacity-0 transition-opacity duration-1000 w-full overflow-x-hidden">
         
-        <header class="h-screen flex flex-col items-center justify-center text-center px-4 w-full">
+        <header class="min-h-screen flex flex-col items-center justify-center text-center px-4 w-full">
             <p class="text-amber-400/80 tracking-[0.3em] md:tracking-[0.5em] text-[10px] md:text-xs uppercase mb-4 animate-float-up" style="animation-delay: 0.5s">Saskia & Moiz Present</p>
             
             <div class="animate-reveal flex flex-col items-center w-full">
                 <div class="name-container">
                     <h1 class="font-monte responsive-title gold-text">Arshaan</h1>
-                    <h2 class="font-monte text-3xl md:text-7xl text-white/80 -mt-1 md:-mt-2">Janjua</h2>
+                    <h2 class="font-monte text-3xl md:text-7xl text-white -mt-1 md:-mt-2">Janjua</h2>
                 </div>
             </div>
 
-            <div class="flex flex-col items-center gap-4 mt-8 md:mt-12 animate-float-up" style="animation-delay: 1.5s">
+            <div class="flex flex-col items-center gap-2 md:gap-4 mt-6 md:mt-10 animate-float-up" style="animation-delay: 1.5s">
                 <div class="flex items-center gap-4 md:gap-6 text-white/60">
                     <span class="text-lg md:text-xl font-light italic">/Ar-Shaan/</span>
                     <button onclick="speakName()" class="w-10 h-10 rounded-full ios-glass flex items-center justify-center hover:text-amber-400 active:scale-90">
@@ -198,17 +196,16 @@
                     <span class="uppercase tracking-widest text-[10px] md:text-sm">Persian</span>
                 </div>
                 
-                <!-- Scroll Indicator beneath pronunciation -->
-                <div class="mt-12 flex flex-col items-center cursor-pointer opacity-40 hover:opacity-100 transition-opacity" onclick="scrollToTimeline()">
-                    <span class="font-cinzel text-[10px] tracking-[0.4em] uppercase mb-3">Scroll for more</span>
-                    <div class="w-px h-12 bg-gradient-to-b from-white to-transparent"></div>
+                <!-- Improved spacing for "Scroll for more" -->
+                <div class="mt-8 md:mt-12 flex flex-col items-center cursor-pointer opacity-40 hover:opacity-100 transition-opacity" onclick="scrollToTimeline()">
+                    <span class="font-cinzel text-[10px] tracking-[0.4em] uppercase mb-2">Scroll for more</span>
+                    <div class="w-px h-10 md:h-12 bg-gradient-to-b from-white to-transparent"></div>
                 </div>
             </div>
         </header>
 
         <!-- Timeline -->
         <div id="timeline-section" class="w-full max-w-5xl relative px-6 md:px-4 py-20">
-            <!-- Timeline Line: Visible on all devices, centered -->
             <div id="timeline-line" class="timeline-line"></div>
 
             <!-- 1. Ancient Roots -->
@@ -241,7 +238,7 @@
                 </div>
             </div>
 
-            <!-- 3. Union of Cultures -->
+            <!-- 3. Union of Cultures (Updated with Indian) -->
             <div class="timeline-node text-center mb-12">
                 <div class="w-20 h-20 md:w-28 md:h-28 mx-auto mb-6 md:mb-8 glass-panel rounded-full flex items-center justify-center bg-[#0f0518] border border-white/20 z-10 relative">
                     <i class="fas fa-globe-asia text-2xl md:text-4xl text-white/80"></i>
@@ -249,24 +246,34 @@
                 <h3 class="font-cinzel text-3xl md:text-4xl text-white mb-4 px-4">A Union of Cultures</h3>
                 <p class="text-gray-400 max-w-2xl mx-auto mb-12 px-6 italic text-sm md:text-base">The name Arshaan is a linguistic bridge, resonating across ancient civilizations and modern hearts.</p>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 max-w-4xl mx-auto px-4">
-                    <div class="info-card glass-panel p-6 md:p-8 rounded-3xl text-center md:h-[220px] flex flex-col justify-center border border-amber-500/20">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto px-4">
+                    <div class="info-card glass-panel p-6 md:p-8 rounded-3xl text-center md:h-[240px] flex flex-col justify-center border border-amber-500/20">
                         <div class="w-10 h-10 mx-auto mb-4 flex items-center justify-center bg-amber-400/10 rounded-full">
                             <i class="fas fa-moon text-amber-400"></i>
                         </div>
                         <h4 class="font-playfair text-lg text-amber-400 mb-2 font-bold uppercase tracking-widest">Arabic</h4>
-                        <p class="text-xs md:text-sm text-gray-400 leading-relaxed">
+                        <p class="text-[11px] md:text-xs text-gray-400 leading-relaxed">
                             Intertwined with meanings of "Dignity" and "Status," mirroring the phonetic beauty of high-ranking virtues.
                         </p>
                     </div>
 
-                    <div class="info-card glass-panel p-6 md:p-8 rounded-3xl text-center md:h-[220px] flex flex-col justify-center border border-purple-500/20">
+                    <div class="info-card glass-panel p-6 md:p-8 rounded-3xl text-center md:h-[240px] flex flex-col justify-center border border-purple-500/20">
                         <div class="w-10 h-10 mx-auto mb-4 flex items-center justify-center bg-purple-400/10 rounded-full">
                             <i class="fas fa-feather-alt text-purple-400"></i>
                         </div>
                         <h4 class="font-playfair text-lg text-purple-400 mb-2 font-bold uppercase tracking-widest">Persian</h4>
-                        <p class="text-xs md:text-sm text-gray-400 leading-relaxed">
+                        <p class="text-[11px] md:text-xs text-gray-400 leading-relaxed">
                             The direct lineage to the "Kayanian" kings, representing the "Arsh" (The Throne) and a noble spirit.
+                        </p>
+                    </div>
+
+                    <div class="info-card glass-panel p-6 md:p-8 rounded-3xl text-center md:h-[240px] flex flex-col justify-center border border-orange-500/20">
+                        <div class="w-10 h-10 mx-auto mb-4 flex items-center justify-center bg-orange-400/10 rounded-full">
+                            <i class="fas fa-sun text-orange-400"></i>
+                        </div>
+                        <h4 class="font-playfair text-lg text-orange-400 mb-2 font-bold uppercase tracking-widest">Indian</h4>
+                        <p class="text-[11px] md:text-xs text-gray-400 leading-relaxed">
+                            A modern favorite in the subcontinent, representing a "Pure" and "Radiant" soul that illuminates its surroundings.
                         </p>
                     </div>
                 </div>
